@@ -1,0 +1,23 @@
+#navbar {
+    width: 100%;
+    height: 15%;
+    background-color: #53c3bc;
+}
+
+.navbar-text {
+    color: white;
+    font-size: 2.5vw;
+    font-weight: strong;
+    font-family: 'Dancing Script', cursive;
+    margin-left: 1%;
+}
+
+.flex-navbar {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
