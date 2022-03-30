@@ -1,3 +1,26 @@
 #location-form {
     margin-top: 3%;
 }
+
+#forecast-grid {
+    margin: auto;
+    padding-top: 10%;
+    display: grid;
+    column-gap: 20%;
+    text-align: center;
+    box-shadow: 5pt;
+}
+
+.forecast-header {
+    font-size: 2em;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.forecast-item {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.forecast-card {
+    stroke: black;
+    stroke-width: 1px;
+}

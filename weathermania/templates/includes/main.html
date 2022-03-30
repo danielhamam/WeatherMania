@@ -1,7 +1,17 @@
 <!-- User enters location information to get weather details about-->
-<form action="" id="location-form" style="text-align: center;"> 
+<form action="{{ url_for('api.get_weather_forecast') }}" method="get" id="location-form" style="text-align: center;"> 
     <label>Enter the city of your choice: </label>
-    <input type="text" placeholder="City Name" required/>
+    <input name="city_name" type="text" placeholder="City Name" required/>
+    <input type="submit">
 </form>
 
 <!-- This is where you show the result in card form -->
+{% if weather_data is defined %}
+    <div class="forecast-card">
+        <div id="forecast-grid">
+            <div class="forecast-item forecast-header"> {{weather_data['name']}}</div>
+            <div class="forecast-item"> {{weather_data['main']['temp']}}˚F</div>
+            <div class="forecast-item"> {{weather_data['weather'][0]['description']}}</div>
+        </div>
+    </div>
+{% endif %}
