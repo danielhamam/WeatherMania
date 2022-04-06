@@ -1,0 +1,7 @@
+{% if prev_weather_data_list is defined %}
+    <div class="prev-box"> 
+        {% for weather_data in prev_weather_data_list %}
+            {% include 'includes/card-base.html' %}
+        {% endfor %}
+    </div>
+{% endif %}

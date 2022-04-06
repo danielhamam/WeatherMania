@@ -1,26 +1,69 @@
+/*******************************************************************
+********************************************************************
+                    MAIN COMPONENT STYLING
+********************************************************************
+********************************************************************/
+
+
 #location-form {
     margin-top: 3%;
 }
 
-#forecast-grid {
-    margin: auto;
-    padding-top: 10%;
-    display: grid;
-    column-gap: 20%;
-    text-align: center;
-    box-shadow: 5pt;
+#response-weather-container {
+    margin-top: 3%;
+    margin-left: 45%;
 }
 
-.forecast-header {
-    font-size: 2em;
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
+#prev-responses-weather-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-left: 4%;
+    overflow: auto;
+    /* column-gap: 5px; */
+    flex: 1;
+    flex-wrap: wrap;
 }
 
-.forecast-item {
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
+.prev-box {
+    display: flex;
+    min-height: min-content; /* needs vendor prefixes */
 }
+
+/*******************************************************************
+********************************************************************
+                RESPONSE WEATHER CARD STYLING
+********************************************************************
+********************************************************************/
 
 .forecast-card {
-    stroke: black;
-    stroke-width: 1px;
+    border: 0.25px solid;
+    border-radius: 5%;
+    font-family: 'Helvetica', sans-serif;
+    width: 10em;
+    height: 13em;
+}
+
+.forecast-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers horizontally (center on cross axis -- rows) */
+    box-shadow: 5pt;
+    column-gap: 25px;
+}
+
+.forecast-header-text {
+    font-weight: 500;
+}
+
+.forecast-img {
+    /* padding: 5%; */
+}
+
+.forecast-text {
+    text-align: center;
+}
+
+.forecast-data {
+    padding-top: 15%;
 }

@@ -1,6 +1,6 @@
 from flask import request
 from config import weather_api_key
-import requests, logging
+import requests
 
 # --------------------------------------------------------------------------------------------
 # Method Name: get_city_info
@@ -14,5 +14,4 @@ def get_city_info(city_name):
                 params=payload
     )
     data = response.json() # deserializes
-    logging.debug("City information", data)
     return data[0] # dictionary within a list

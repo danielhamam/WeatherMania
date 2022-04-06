@@ -1,0 +1,11 @@
+<div class="forecast-card">
+    <div class="forecast-grid">
+        <img class="forecast-img" src="http://openweathermap.org/img/wn/{{weather_data['weather'][0]['icon']}}@2x.png"/>
+        <div class="forecast-data"> 
+            <div class="forecast-text forecast-header-text" style="text-transform: uppercase"> {{weather_data['name']}}</div>
+            <br/>
+            <div class="forecast-text"> {{weather_data['main']['temp']}}˚F</div>
+            <div class="forecast-text"> {{weather_data['weather'][0]['description']}}</div>
+        </div>
+    </div>
+</div>

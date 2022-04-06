@@ -1,12 +1,11 @@
 from flask import Flask
 from weathermania.routes import weathermania, api
-import logging
 
 # Run instance of the Flask class (serves as WSGI application)
 app = Flask(__name__) 
 
 # Lower logging level to debug
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
 # Register blueprints
 app.register_blueprint(weathermania.bp) 
