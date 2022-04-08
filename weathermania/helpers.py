@@ -2,6 +2,8 @@ from flask import request
 from config import weather_api_key
 import requests
 
+weather_forecasts = []
+
 # --------------------------------------------------------------------------------------------
 # Method Name: get_city_info
 # Purpose: Returns latitude, longitude, country, and state of specified city name. 
@@ -15,3 +17,6 @@ def get_city_info(city_name):
     )
     data = response.json() # deserializes
     return data[0] # dictionary within a list
+
+def add_forecast(forecast):
+    weather_forecasts.append(forecast)
