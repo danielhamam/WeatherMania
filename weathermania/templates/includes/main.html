@@ -1,7 +1,7 @@
 <!-- User enters location information to get weather details about-->
-<form action="{{ url_for('api.get_weather_forecast') }}" method="get" id="location-form" style="text-align: center;"> 
+<form id="location-form" action="/add_forecast" style="text-align: center;"> 
     <label>Enter the city of your choice: </label>
-    <input name="city_name" type="text" placeholder="City Name" required/>
+    <input id="requested-city" name="city_name" type="text" placeholder="City Name" required/>
     <input type="submit">
 </form>
 
@@ -11,7 +11,7 @@
 </div>
 
 <!-- This is where we show the past results -->
-<div style="margin-left: 3%; font-weight: 500;"> Saved searches: </div> 
+<div style="margin-left: 3%; margin-top: 2%; font-weight: 500;"> Saved City Forecasts: </div> 
 <div id="prev-responses-weather-container">
-    <div> {% include 'prev-responses-weather-container.html' %} </div>
+    <div> {% include 'saved-weather-cards.html' %} </div>
 </div>

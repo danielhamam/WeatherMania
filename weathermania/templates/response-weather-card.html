@@ -1,3 +1,6 @@
 {% if weather_data is defined %}
-    {% include 'includes/card-base.html' %}
+    {% include 'includes/card-base-response.html' %}
+{% else %}
+<!-- Meant to take up space so "Your Forecasts" stays on bottom -->
+<div class="forecast-card" style="visibility: hidden;"> </div>
 {% endif %}

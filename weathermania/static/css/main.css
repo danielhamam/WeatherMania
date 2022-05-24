@@ -37,6 +37,7 @@
 ********************************************************************/
 
 .forecast-card {
+    position: relative;
     border: 0.25px solid;
     border-radius: 5%;
     font-family: 'Helvetica', sans-serif;
@@ -44,12 +45,19 @@
     height: 13em;
 }
 
-.forecast-grid {
+.forecast-flex {
     display: flex;
     flex-direction: column;
-    align-items: center; /* centers horizontally (center on cross axis -- rows) */
+    align-items: center; /* Centers horizontally (center on cross axis -- rows) */
     box-shadow: 5pt;
     column-gap: 25px;
+}
+
+.forecast-close {
+    position: absolute; /* Absolutely positioned menu elements won't push the page content. */
+    font-size: 24px;
+    right: 0;
+    color: red;
 }
 
 .forecast-header-text {

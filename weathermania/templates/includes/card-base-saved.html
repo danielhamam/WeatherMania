@@ -1,0 +1,14 @@
+<div class="forecast-card">
+    <form name="formRemove" action="{{url_for('weathermania.remove_forecast', forecast=weather_data)}}" method="post"> 
+        <button type="submit" class="forecast-close fas fa-times-circle"></button>
+    </form>
+    <div class="forecast-flex">
+        <img class="forecast-img" src="http://openweathermap.org/img/wn/{{weather_data['weather'][0]['icon']}}@2x.png"/>
+        <div class="forecast-data"> 
+            <div name="forecast-city-name" class="forecast-text forecast-header-text" style="text-transform: uppercase"> {{weather_data['name']}}</div>
+            <br/>
+            <div class="forecast-text"> {{weather_data['main']['temp']}}˚F</div>
+            <div class="forecast-text"> {{weather_data['weather'][0]['description']}}</div>
+        </div>
+    </div>
+</div>
