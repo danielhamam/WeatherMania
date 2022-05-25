@@ -15,11 +15,19 @@ def run_app():
 @bp.route("/add_forecast", methods=['GET', 'POST'])
 def add_forecast():
     city_name = request.args.get('city_name')
-    response = get_weather_forecast(city_name)
-    print("Preparing to add forecast: ", response)
-    weather_forecasts.insert(0, response) # inserts forecast (as dictionary)
-    print("Successfully added forecast: ", response)
-    return render_template("app.html", weather_data=response, prev_weather_data_list=weather_forecasts)
+    # (1) Check if the city name already has a forecast
+    already_exists = False
+    for x_forecast in weather_forecasts:
+        if x_forecast.get("name") == city_name:
+            already_exists = True
+    # (2) If it doesn't already exist, proceed with addition
+    if not already_exists:
+        response = get_weather_forecast(city_name)
+        print("Preparing to add forecast: ", response)
+        weather_forecasts.insert(0, response) # inserts forecast (as dictionary)
+        print("Successfully added forecast: ", response)
+        return render_template("app.html", weather_data=response, prev_weather_data_list=weather_forecasts)
+    return render_template("app.html", prev_weather_data_list=weather_forecasts)
 
 @bp.route("/remove_forecast/<forecast>", methods=['GET', 'POST'])
 def remove_forecast(forecast):
