@@ -1,6 +1,8 @@
 <div class="forecast-card">
     <form name="formRemove" action="{{url_for('weathermania.remove_forecast', forecast=weather_data)}}" method="post"> 
-        <button type="submit" class="forecast-close fas fa-times-circle"></button>
+        <button class="forecast-close" type="submit"> 
+            <i class="forecast-close fas fa-times-circle"></i>
+        </button>
     </form>
     <div class="forecast-flex">
         <img class="forecast-img" src="http://openweathermap.org/img/wn/{{weather_data['weather'][0]['icon']}}@2x.png"/>

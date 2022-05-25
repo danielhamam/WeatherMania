@@ -20,7 +20,7 @@ def get_mock_weather_forecast():
             "https://api.openweathermap.org/data/2.5/weather",
             params=payload
     )
-    return response.content
+    return response.json()
 
 # --------------------------------------------------------------------------------------------
 # API Name: get_weather_forecast

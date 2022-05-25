@@ -55,9 +55,12 @@
 
 .forecast-close {
     position: absolute; /* Absolutely positioned menu elements won't push the page content. */
-    font-size: 24px;
-    right: 0;
+    font-size: 18px;
+    right: 1px;
     color: red;
+    background: none; 
+    border: none; 
+    cursor:pointer;
 }
 
 .forecast-header-text {
