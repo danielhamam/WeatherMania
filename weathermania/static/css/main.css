@@ -30,6 +30,11 @@
     min-height: min-content; /* needs vendor prefixes */
 }
 
+.submit_error_message {
+    color: red;
+    font-size: 9pt;
+}
+
 /*******************************************************************
 ********************************************************************
                 RESPONSE WEATHER CARD STYLING

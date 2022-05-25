@@ -8,13 +8,14 @@ import requests
 # --------------------------------------------------------------------------------------------
 
 def get_city_info(city_name):
+    print("***** Retrieving city info for", city_name, "*****")
     payload = {'q': city_name, 'appid': weather_api_key}
     response = requests.get(
                 "http://api.openweathermap.org/geo/1.0/direct",
                 params=payload
     )
     data = response.json() # deserializes
-    print("DATA FROM CITY INFO: ", data)
+    # print("DATA FROM CITY INFO: ", data)
     return data[0] # dictionary within a list
 
 # --------------------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ def get_weather_forecast(city_name):
         raise Exception("City name argment not provided. Aborting...")
     else:
         city_info = get_city_info(request.args.get('city_name'))
+        print("***** Fetching weather forecast for", city_name, "*****")
         payload = {'lat': city_info.get("lat"), 'lon': city_info.get("lon"), 'units': 'imperial', 'appid': weather_api_key}    
         response = requests.get(
                 "https://api.openweathermap.org/data/2.5/weather",

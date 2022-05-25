@@ -1,8 +1,12 @@
 <!-- User enters location information to get weather details about-->
 <form id="location-form" action="/add_forecast" style="text-align: center;"> 
     <label>Enter the city of your choice: </label>
-    <input id="requested-city" name="city_name" type="text" placeholder="City Name" required/>
+    <input id="requested-city" name="city_name" type="text" placeholder="City Name" required>
+    </input>
     <input type="submit">
+    {% if city_exists_error %}
+        <div class="submit_error_message"> Your forecast already exists. Please try again with a new city name. </div>
+    {% endif %} 
 </form>
 
 <!-- This is where we show the result in card form -->
