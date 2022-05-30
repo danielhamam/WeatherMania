@@ -1,3 +1,5 @@
 Flask
 python-dotenv
 requests
+flask-sqlalchemy # bridge between Python and SQLite database
+alembic # database migration tool

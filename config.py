@@ -1,8 +1,9 @@
 from dotenv import load_dotenv
-import os
+from os import getenv
 
 # Load environment variables
 load_dotenv()
 
-# Set API Key
-weather_api_key = os.getenv("WEATHER_API_KEY")
+# App Environment Variables
+WEATHER_API_KEY = getenv('WEATHER_API_KEY')
+DATA_FOLDER = getenv('DATA_FOLDER', '/database')

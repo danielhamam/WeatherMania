@@ -1,5 +1,5 @@
 from flask import request
-from config import weather_api_key
+from config import WEATHER_API_KEY
 import requests
 
 # --------------------------------------------------------------------------------------------
@@ -9,7 +9,7 @@ import requests
 
 def get_city_info(city_name):
     print("***** Retrieving city info for", city_name, "*****")
-    payload = {'q': city_name, 'appid': weather_api_key}
+    payload = {'q': city_name, 'appid': WEATHER_API_KEY}
     response = requests.get(
                 "http://api.openweathermap.org/geo/1.0/direct",
                 params=payload
@@ -30,7 +30,7 @@ def get_weather_forecast(city_name):
     else:
         city_info = get_city_info(request.args.get('city_name'))
         print("***** Fetching weather forecast for", city_name, "*****")
-        payload = {'lat': city_info.get("lat"), 'lon': city_info.get("lon"), 'units': 'imperial', 'appid': weather_api_key}    
+        payload = {'lat': city_info.get("lat"), 'lon': city_info.get("lon"), 'units': 'imperial', 'appid': WEATHER_API_KEY}    
         response = requests.get(
                 "https://api.openweathermap.org/data/2.5/weather",
                 params=payload

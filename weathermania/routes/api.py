@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, render_template
-from config import weather_api_key
+from config import WEATHER_API_KEY
 from weathermania.helpers import get_city_info
 # from weathermania.routes.weathermania import add_forecast, remove_forecast, weather_forecasts
 import requests
@@ -15,7 +15,7 @@ weather_api_url = "http://api.openweathermap.org/data"
 @bp.route("/mock_weather_forecast", methods=['GET']) # tells Flask what URL should trigger the function
 def get_mock_weather_forecast():
     # Get City Info API
-    payload = {'lat': '35', 'lon': '139', 'units': 'imperial', 'appid': weather_api_key}    
+    payload = {'lat': '35', 'lon': '139', 'units': 'imperial', 'appid': WEATHER_API_KEY}    
     response = requests.get(
             "https://api.openweathermap.org/data/2.5/weather",
             params=payload
@@ -34,7 +34,7 @@ def get_mock_weather_forecast():
 #         raise Exception("City name argment not provided. Aborting...")
 #     else:
 #         city_info = get_city_info(request.args.get('city_name'))
-#         payload = {'lat': city_info.get("lat"), 'lon': city_info.get("lon"), 'units': 'imperial', 'appid': weather_api_key}    
+#         payload = {'lat': city_info.get("lat"), 'lon': city_info.get("lon"), 'units': 'imperial', 'appid': WEATHER_API_KEY}    
 #         response = requests.get(
 #                 "https://api.openweathermap.org/data/2.5/weather",
 #                 params=payload

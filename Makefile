@@ -6,3 +6,6 @@ setup:
 
 dev:
 		bash run_app.sh
+
+init: 
+		.venv/bin/alembic upgrade head 
