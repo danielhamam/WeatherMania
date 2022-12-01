@@ -40,3 +40,13 @@ make init
     3. Execute 'make init'
     4. Locate the newly generated file in alembic/versions/*.py
 ```
+
+# --------------------------------------------------------------------------------
+#                       HOW TO RUN DOCKER INSTANCE
+# --------------------------------------------------------------------------------
+
+```
+# (1) Create docker image: docker build --tag weathermania . 
+# (2) Run docker container: docker run -d -p 9000:5000 weathermania
+# (3) Locate to localhost:9000 - app should be viewable
+```
